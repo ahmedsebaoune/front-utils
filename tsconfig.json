@@ -19,14 +19,10 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"],
-    "paths": {
-      "utils": ["dist/utils"],
-      "utils/*": ["dist/utils/*"],
-      "@ahmedsebaoune/front-utils": ["dist/utils"],
-      "@ahmedsebaoune/front-utils/*": ["dist/utils/*"],
-      "@testing": ["projects/utils/testing/public-api"]
-    }
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
