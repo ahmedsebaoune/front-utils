@@ -5,7 +5,6 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -22,7 +21,14 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+		"paths": {
+			"utils": ["dist/utils"],
+			"utils/*": ["dist/utils/*"],
+			"@sebaoune/front-utils": ["dist/utils"],
+			"@sebaoune/front-utils/*": ["dist/utils/*"],
+			"@testing": ["projects/utils/testing/public-api"]
+		},
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

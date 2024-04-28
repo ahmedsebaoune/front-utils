@@ -1,0 +1,20 @@
+{
+  "name": "@ahmedsebaoune/front-utils",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^16.1.0",
+    "@angular/core": "^16.1.0",
+    "@angular/material": "16"
+  },
+  "exports": {
+    "./themes/sebaoune-theme": {
+      "sass": "./assets/styles/sebaoune-theme.scss"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

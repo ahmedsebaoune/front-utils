@@ -2,11 +2,21 @@
   "name": "front-utils",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+		"ng": "ng",
+		"start": "ng serve",
+		"format": "prettier --write .",
+		"build": "export NODE_OPTIONS=--max-old-space-size=4096 && ng build utils",
+		"build-watch": "export NODE_OPTIONS=--max-old-space-size=8192 && ng build utils --watch",
+		"publish-utils": "yarn build && npm publish ./dist/utils",
+		"test": "export NODE_OPTIONS=--max-old-space-size=4096 && ng test",
+		"coverage": "export NODE_OPTIONS=--max-old-space-size=4096 && ng test --no-watch --code-coverage && open -a \"Google Chrome\" coverage/utils/index.html",
+		"link-types": "yarn link @ezygain/types",
+		"unlink-types": "yarn unlink @ezygain/types && yarn install --force",
+		"link-utils": "cd dist/utils && yarn link @ezygain/front-utils",
+		"unlink-utils": "cd dist/utils && yarn unlink @ezygain/front-utils",
+		"lint": "ng lint",
+		"e2e": "ng e2e",
+		"preversion": "echo \"To set the version, go to your project's subdirectory (projects/utils).\"; exit 1"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +33,7 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^16.1.8",
     "@angular/cli": "~16.1.8",
     "@angular/compiler-cli": "^16.1.0",
     "@types/jasmine": "~4.3.0",
@@ -32,6 +43,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^16.0.0",
     "typescript": "~5.1.3"
   }
 }
